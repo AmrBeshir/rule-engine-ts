@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a simple rule engine using typescript that can be extended in any to fit the bussiness rules. This Project uses the property of javascript function pointers to divided a rule into a condition and an action.
+This is a simple rule engine using typescript that can be extended in any way to fit the business rules. This Project uses the property of javascript function pointers to divide rules into a condition and an action.
 
 ## Explaining By Example
 
@@ -23,7 +23,7 @@ const employees: User[] = [
 ];
 ```
 
-Our company has a website which clients can fill in forms so one of our salesman can reach out to them, the form requires the client to input their name, phone, what are product are they interested in and their budget:
+Our company has a website in which clients can fill in forms so one of our salesman can reach out to them. The form requires the client to input their name, phone, what are product are they interested in and their budget:
 
 ```typescript
 export interface Client {
@@ -53,7 +53,7 @@ const rules: Rule[] = [
   //Same Point but this time Home Furnture rule (id 2 is Adam Willy).
   new StringRule("pointOfInterest", "Home Furniture", [2, 4]),
   new StringRule("pointOfInterest", "Plumbing Fixtures", [3, 4]),
-  // Finally if the client budger it greater than 10000 then only Michael can work with them.
+  // Finally if the client budget is greater than 10000 then only Michael can work with them.
   new NumberRule("budget", 10000, [4], "greater"),
 ];
 ```
